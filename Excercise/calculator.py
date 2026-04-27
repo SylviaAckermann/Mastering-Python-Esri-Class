@@ -1,5 +1,6 @@
 
 value = 0
+history_id = 0
 calc_history = []
 
 while True: 
@@ -7,8 +8,15 @@ while True:
 
     if command == "clear":
         value = 0
+        calc_history = []
     elif command == "exit":
         break
+    elif command == "remove":
+        history_id_remove = input("Which ID of the history should be removed?")
+        for i, c in enumerate(calc_history):
+            if c["id"] == int(history_id_remove):
+                del calc_history[i]
+        print(calc_history)
     elif command == "history":
         print("0")
         for c in calc_history:
@@ -34,5 +42,6 @@ while True:
             symbol = " "
 
         if symbol != " ":
-            calc_history.append({"id": len(calc_history),"command": command, "symbol": symbol, "operand": operand})
+            history_id += 1
+            calc_history.append({"id": history_id,"command": command, "symbol": symbol, "operand": operand})
     print("Result: "+str(value))
