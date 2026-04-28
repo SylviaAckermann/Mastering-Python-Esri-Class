@@ -2,34 +2,13 @@
 
 from Calculator.history import print_history_commands, print_history_calculations, remove_id_from_history
 from Calculator.operations import get_command, get_operand, command_clear, command_exit
-#from Calculator.result import print_result, calculate_result
+from Calculator.calc_result import command_calc, calculate_result, print_result, add, sub, mul, div
 
 value = 0
 calc_history = []
 
-def add(result, operand):
-    result = result + operand
-    symbol = "+"
-    return result, symbol
-
-def sub(result, operand):
-    result =  result - operand
-    symbol = "-"
-    return result, symbol
-
-def mul(result, operand):
-    result =  result * operand
-    symbol = "-"
-    return result, symbol
-
-def div(result, operand):
-    result =  result / operand
-    symbol = "/"
-    return result, symbol
-
-
-def command_calc(calc_fn, command_name):
-    global value, history_id, calc_history
+def command_calc(calc_fn, command_name, calc_history):
+    global value, history_id
     operand = get_operand()
     value = calculate_result(calc_history)
     value, symbol = calc_fn(value, operand)
@@ -37,25 +16,6 @@ def command_calc(calc_fn, command_name):
     history_id += 1
     calc_history.append({"id": history_id,"command": command_name, "symbol": symbol, "operand": operand})
 
-def get_command_function(command):
-    if command == "add" or command == "+":
-        return add
-    elif command == "subtract" or command == "-":
-        return sub
-    elif command == "multiply" or command == "*":
-        return mul
-    elif command == "divide" or command == "/":
-        return div
-
-def calculate_result(calc_history):
-    value = 0
-    for calc in calc_history:
-        calc_fn = get_command_function(calc["command"])
-        value, _ = calc_fn(value, calc["operand"])
-    return value
-
-def print_result(result):
-    print("Result: "+str(result))
 
 def command_loop():
     global value, calc_history, history_id
@@ -83,12 +43,12 @@ def command_loop():
         else:
             
             if command == "add" or command == "+":
-                command_calc(add, command)
+                command_calc(add, command, calc_history)
             elif command == "subtract" or command == "-":
-                command_calc(sub, command)
+                command_calc(sub, command, calc_history)
             elif command == "multiply" or command == "*":
-                command_calc(mul, command)
+                command_calc(mul, command, calc_history)
             elif command == "divide" or command == "/":
-                command_calc(div, command)
+                command_calc(div, command, calc_history)
             else:
                 print("The calculator does not know this command.")
