@@ -1,15 +1,11 @@
 from Calculator.operations import command_clear
 from Calculator.commands import command_loop
 
-# Module-level variables
-value = 0
-calc_history = []
 
 def main():
-    print("This is my calculator")
 
-    global value, calc_history
-    command_clear()
+    print("Calculator Tool")
+    print("Available commands: add, subtract, multiply, divide, clear, history, remove, exit")
 
     command_loop()
 
