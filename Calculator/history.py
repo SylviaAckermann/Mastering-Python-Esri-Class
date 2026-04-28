@@ -16,3 +16,7 @@ def remove_id_from_history(calc_history):
         if calculation["id"] == int(history_id_remove):
             del calc_history[idx]
     return calc_history
+
+
+
+

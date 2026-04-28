@@ -1,4 +1,4 @@
-from Calculator.operations import command_clear
+
 from Calculator.commands import command_loop
 
 

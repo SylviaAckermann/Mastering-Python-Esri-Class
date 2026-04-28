@@ -14,6 +14,3 @@ def command_clear():
 
 def command_exit():
     print("Exiting calculator...")
-
-def print_result(result):
-    print("Result: "+str(result))
