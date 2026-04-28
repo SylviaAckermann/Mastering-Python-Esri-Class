@@ -37,18 +37,18 @@ topic is introduced, demonstrated, and then exercised through guided
 coding. Participants write Python throughout the course and leave with
 working examples they can adapt to their own projects.
 By the end of the course, participants will be able to:
-■ Write Python scripts that follow idiomatic conventions
-■ Choose and apply Python's built-in data types effectively
-■ Read from and write to files containing text or binary content
-■ Match, extract, and transform text using regular expressions
-■ Navigate and use commonly needed modules from the standard library
-■ Apply specialized container types beyond the basics
-■ Structure applications suitable for day-to-day production use
-■ Manipulate dates, times, and calendar data
-■ Select the right collection type — list, dict, set, or otherwise — for a given
+- Write Python scripts that follow idiomatic conventions
+- Choose and apply Python's built-in data types effectively
+- Read from and write to files containing text or binary content
+- Match, extract, and transform text using regular expressions
+- Navigate and use commonly needed modules from the standard library
+- Apply specialized container types beyond the basics
+- Structure applications suitable for day-to-day production use
+- Manipulate dates, times, and calendar data
+- Select the right collection type — list, dict, set, or otherwise — for a given
 task
-■ Work comfortably with comprehensions, iterators, and generators
-■ Build reliable code using exception handling
+- Work comfortably with comprehensions, iterators, and generators
+- Build reliable code using exception handling
 
 
 ## Outline Summary
