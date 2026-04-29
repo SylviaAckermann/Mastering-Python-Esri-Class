@@ -1,5 +1,6 @@
-WARNING: Unknown command <test>
-WARNING: Unknown command <hello>
-WARNING: Unknown command <my history>
-WARNING: Unknown command <view history>
-ERROR: Division by zero is not possible.
+INFO: command 'add'
+INFO: command 'add'
+INFO: command 'add'
+INFO: command 'add'
+INFO: command 'add'
+INFO: command 'subtract'

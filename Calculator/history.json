@@ -1,0 +1,38 @@
+[
+  {
+    "id": 1,
+    "command": "add",
+    "symbol": "+",
+    "operand": 1.0
+  },
+  {
+    "id": 2,
+    "command": "add",
+    "symbol": "+",
+    "operand": 2.0
+  },
+  {
+    "id": 3,
+    "command": "add",
+    "symbol": "+",
+    "operand": 3.0
+  },
+  {
+    "id": 4,
+    "command": "add",
+    "symbol": "+",
+    "operand": 2.0
+  },
+  {
+    "id": 5,
+    "command": "add",
+    "symbol": "+",
+    "operand": 3.0
+  },
+  {
+    "id": 6,
+    "command": "subtract",
+    "symbol": "-",
+    "operand": 1.0
+  }
+]

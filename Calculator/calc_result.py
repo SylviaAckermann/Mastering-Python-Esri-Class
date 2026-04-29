@@ -1,4 +1,4 @@
-from Calculator.operations import get_operand
+from Calculator.operations import get_operand, write_command
 
 def add(result, operand):
     result = result + operand
@@ -44,6 +44,8 @@ def command_calc(calc_fn, command_name, history):
     print_result(value)
     history.history_id += 1
     history.calc_history.append({"id": history.history_id,"command": command_name, "symbol": symbol, "operand": operand})
+    write_command(command_name)
+    history.save_history("Calculator/history.json")
     return history
 
 

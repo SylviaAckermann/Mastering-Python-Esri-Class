@@ -1,12 +1,12 @@
 
-from Calculator.operations import get_command, unknown_command, command_clear, command_exit
+from Calculator.operations import get_command, get_history_json, unknown_command, command_clear, command_exit
 from Calculator.calc_result import command_calc, calculate_result, print_result, add, sub, mul, div
 from Calculator.history import history
 
 
 def command_loop():
 
-    my_calc_history = history()
+    my_calc_history = get_history_json()
 
     while True: 
         command = get_command()

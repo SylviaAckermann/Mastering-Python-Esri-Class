@@ -1,11 +1,28 @@
 from Calculator.history import history
-import logging
+import logging, os
 
 def get_command():
     return input("Enter command: ")
 
 def get_operand():
     return float(input("Enter an operand: "))
+
+def get_history_json():
+    my_calc_history = history()
+    print("Would you like to reuse the history of your previous calculations?")
+    history_file = input("If yes, enter path to history.json here: ")
+    if os.path.exists(history_file):
+        try:
+            my_calc_history.load_history(history_file)
+            print(f"Loaded history from {history_file}.")
+        except Exception:
+            logging.error("History could not be loaded.")
+    else:
+        print("Continuing without loading history.")
+    return my_calc_history
+
+def write_command(command):
+    logging.info(f"command '{command}'")
 
 def unknown_command(command):
     logging.warning(f"Unknown command '{command}'")
@@ -17,3 +34,4 @@ def command_clear():
 
 def command_exit():
     print("Exiting calculator...")
+ 

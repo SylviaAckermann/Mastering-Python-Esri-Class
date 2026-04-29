@@ -5,7 +5,8 @@ import logging
 # Import logging here to only load function once
 logging.basicConfig(
     filename="Calculator/calc_commands.log",
-    format="%(levelname)s: %(message)s"
+    format="%(levelname)s: %(message)s",
+    level=logging.INFO
 )
 
 def main():
