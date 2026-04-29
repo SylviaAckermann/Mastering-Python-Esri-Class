@@ -32,14 +32,14 @@ def get_command_function(command):
         return div
     
 
-def command_calc(calc_fn, command_name, calc_history):
-    global value, history_id
+def command_calc(calc_fn, command_name, history):
     operand = get_operand()
-    value = calculate_result(calc_history)
+    value = calculate_result(history.calc_history)
     value, symbol = calc_fn(value, operand)
     print_result(value)
-    history_id += 1
-    calc_history.append({"id": history_id,"command": command_name, "symbol": symbol, "operand": operand})
+    history.history_id += 1
+    history.calc_history.append({"id": history.history_id,"command": command_name, "symbol": symbol, "operand": operand})
+    return history
 
 
 def calculate_result(calc_history):
