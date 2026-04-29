@@ -1,0 +1,6 @@
+DEBUG: Starting the program
+CRITICAL: Unexpected error occured.
+Traceback (most recent call last):
+  File "/Users/syl14460/Documents/Scripts/Mastering-Python-class/Demo/Logging/error_handling/good_pattern.py", line 13, in main
+    raise Exception("Something went wrong ...")
+Exception: Something went wrong ...

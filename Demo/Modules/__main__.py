@@ -1,5 +1,5 @@
 
-from mods.utils import log, add
+from Demo.Modules.utils import log, add
 
 def main():
     log("Hello, World!")

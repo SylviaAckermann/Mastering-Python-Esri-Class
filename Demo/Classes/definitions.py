@@ -1,5 +1,5 @@
 
-from person import Person
+from Demo.Classes.person import Person
 
 
 p1 = Person("Bob", "Smith", 32, "Munich")

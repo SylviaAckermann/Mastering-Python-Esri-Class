@@ -1,17 +1,8 @@
 
-from Calculator.operations import get_command, get_operand, command_clear, command_exit
+from Calculator.operations import get_command, unknown_command, command_clear, command_exit
 from Calculator.calc_result import command_calc, calculate_result, print_result, add, sub, mul, div
 from Calculator.history import history
 
-
-def command_calc(calc_fn, command_name, history):
-    operand = get_operand()
-    value = calculate_result(history.calc_history)
-    value, symbol = calc_fn(value, operand)
-    print_result(value)
-    history.history_id += 1
-    history.calc_history.append({"id": history.history_id,"command": command_name, "symbol": symbol, "operand": operand})
-    return history
 
 def command_loop():
 
@@ -48,4 +39,4 @@ def command_loop():
             elif command == "divide" or command == "/":
                 my_calc_history = command_calc(div, command, my_calc_history)
             else:
-                print("The calculator does not know this command.")
+                unknown_command(command)

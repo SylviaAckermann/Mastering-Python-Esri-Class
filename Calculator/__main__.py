@@ -1,6 +1,12 @@
 
 from Calculator.commands import command_loop
+import logging
 
+# Import logging here to only load function once
+logging.basicConfig(
+    filename="Calculator/calc_commands.log",
+    format="%(levelname)s: %(message)s"
+)
 
 def main():
 
