@@ -1,4 +1,4 @@
-import json
+import json, csv
 
 
 class history:
@@ -41,6 +41,12 @@ class history:
             print(f"History file {json_file_name} not found. Starting with empty history.")
         except json.JSONDecodeError:
             print(f"Error reading history file {json_file_name}. Starting with empty history.")
+    
+    def save_history_csv(self, csv_file_name):
+        with open(csv_file_name, "w", newline="") as f:
+            writer = csv.DictWriter(f, fieldnames=["id", "command", "symbol", "operand"])
+            writer.writeheader()
+            writer.writerows(self.calc_history)
 
 
 

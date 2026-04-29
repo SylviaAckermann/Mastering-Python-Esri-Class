@@ -46,6 +46,7 @@ def command_calc(calc_fn, command_name, history):
     history.calc_history.append({"id": history.history_id,"command": command_name, "symbol": symbol, "operand": operand})
     write_command(command_name)
     history.save_history("Calculator/history.json")
+    history.save_history_csv("Calculator/history.csv")
     return history
 
 

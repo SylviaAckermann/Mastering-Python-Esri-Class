@@ -1,0 +1,5 @@
+id,command,symbol,operand
+1,add,+,1.0
+2,add,+,2.0
+3,add,+,56.0
+4,add,+,23.0
