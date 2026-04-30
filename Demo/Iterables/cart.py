@@ -10,8 +10,8 @@ class CartIterator:
         self.__items = items
         self.__index = 0
 
+    # iterator method for Cart object
     def __next__(self):
-        # iterator method for Cart object
         if self.__index < len(self.__items):
             item = self.__items[self.__index]
             self.__index += 1
