@@ -1,4 +1,5 @@
 from Calculator.operations import get_operand, write_command
+from Calculator.history_entry import HistoryEntry
 
 def add(result, operand):
     result = result + operand
@@ -39,22 +40,23 @@ def get_command_function(command):
 
 def command_calc(calc_fn, command_name, history):
     operand = get_operand()
-    value = calculate_result(history.get_calc_history())
+    value = calculate_result(history)
     value, symbol, operand = calc_fn(value, operand)
     print_result(value)
-    history.increase_history_id()
-    history.append_entry(command_name, symbol, operand)
+    id = history.increase_history_id()
+    new_history_entry = HistoryEntry(id, command_name, symbol, operand)
+    history.append_entry(new_history_entry)
     write_command(command_name)
     history.save_history("Calculator/history.json")
     history.save_history_csv("Calculator/history.csv")
     return history
 
 
-def calculate_result(calc_history):
+def calculate_result(history):
     value = 0
-    for calc in calc_history:
-        calc_fn = get_command_function(calc["command"])
-        value, _ ,_ = calc_fn(value, calc["operand"])
+    for entry in history:
+        calc_fn = get_command_function(entry.op_name)
+        value, _ ,_ = calc_fn(value, entry.op_value)
     return value
 
 
