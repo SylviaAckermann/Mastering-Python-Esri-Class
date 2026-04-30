@@ -39,11 +39,11 @@ def get_command_function(command):
 
 def command_calc(calc_fn, command_name, history):
     operand = get_operand()
-    value = calculate_result(history.calc_history)
+    value = calculate_result(history.get_calc_history())
     value, symbol, operand = calc_fn(value, operand)
     print_result(value)
-    history.history_id += 1
-    history.calc_history.append({"id": history.history_id,"command": command_name, "symbol": symbol, "operand": operand})
+    history.increase_history_id()
+    history.append_entry(command_name, symbol, operand)
     write_command(command_name)
     history.save_history("Calculator/history.json")
     history.save_history_csv("Calculator/history.csv")

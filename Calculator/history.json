@@ -3,24 +3,12 @@
     "id": 1,
     "command": "add",
     "symbol": "+",
-    "operand": 1.0
+    "operand": 45.0
   },
   {
     "id": 2,
     "command": "add",
     "symbol": "+",
-    "operand": 2.0
-  },
-  {
-    "id": 3,
-    "command": "add",
-    "symbol": "+",
-    "operand": 56.0
-  },
-  {
-    "id": 4,
-    "command": "add",
-    "symbol": "+",
-    "operand": 23.0
+    "operand": 34.0
   }
 ]

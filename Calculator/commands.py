@@ -13,7 +13,7 @@ def command_loop():
 
         if command == "clear":
             my_calc_history = command_clear()
-            result = calculate_result(my_calc_history.calc_history)
+            result = calculate_result(my_calc_history.get_calc_history())
             print_result(result)
         elif command == "exit":
             command_exit()
@@ -25,8 +25,11 @@ def command_loop():
         elif command == "history":
             history.print_history_commands(my_calc_history)
             history.print_history_calculations(my_calc_history)
-            result = calculate_result(my_calc_history.calc_history)
+            result = calculate_result(my_calc_history.get_calc_history())
             print_result(result)
+            print("Print History using Iterator: ")
+            for entry in my_calc_history:
+                print(entry)
 
         else:
             
