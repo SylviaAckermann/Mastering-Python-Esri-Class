@@ -27,9 +27,6 @@ def command_loop():
             history.print_history_calculations(my_calc_history)
             result = calculate_result(my_calc_history.get_calc_history())
             print_result(result)
-            print("Print History using Iterator: ")
-            for entry in my_calc_history:
-                print(entry)
 
         else:
             

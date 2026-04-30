@@ -31,18 +31,18 @@ class history:
         self.__history_id += 1
     
     def print_history_commands(self):
-        for calculation in self.__calc_history:
+        for calculation in self:
             print(calculation)
 
     def print_history_calculations(self):
         print("0")
-        for c in self.__calc_history:
+        for c in self:
             print(c["symbol"]+" "+str(c["operand"])+" ") 
 
     def remove_id_from_history(self):
         self.print_history_commands()
         history_id_remove = input("Which ID of the history should be removed? ")
-        for idx, calculation in enumerate(self.__calc_history):
+        for idx, calculation in enumerate(self):
             if calculation["id"] == int(history_id_remove):
                 del self.__calc_history[idx]
                 break  # Exit after removing the first match
@@ -58,7 +58,7 @@ class history:
                 self.__calc_history = json.load(history_file)
                 # Update history_id to the highest existing ID
                 if self.__calc_history:
-                    self.__history_id = max(entry["id"] for entry in self.__calc_history)
+                    self.__history_id = max(entry["id"] for entry in self)
         except FileNotFoundError:
             print(f"History file {json_file_name} not found. Starting with empty history.")
         except json.JSONDecodeError:
