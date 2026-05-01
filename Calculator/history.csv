@@ -1,4 +1,4 @@
 id,command,symbol,operand
-1,add,+,3.0
-3,multiply,*,4.0
-4,add,+,3.0
+2,add,+,7.0
+3,add,+,3.0
+4,add,+,34.0

@@ -13,6 +13,7 @@ def get_command():
         return d['op_name'], d['op_value']
     else:
         # No match found, return just the command
+        # for command = history, clear, exit, save, load
         return user_input, 0
 
 def get_operand():
@@ -33,8 +34,8 @@ def get_history_json():
             print("Continuing without loading history.")
         return my_calc_history
 
-def write_command(command):
-    logging.info(f"command '{command}'")
+def write_command(command, operand):
+    logging.info(f"command '{command} {operand}'")
 
 def unknown_command(command):
     logging.warning(f"Unknown command '{command}'")
