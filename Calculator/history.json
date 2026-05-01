@@ -1,20 +1,8 @@
 [
   {
-    "id": 2,
+    "id": 1,
     "command": "add",
     "symbol": "+",
-    "operand": 7.0
-  },
-  {
-    "id": 3,
-    "command": "add",
-    "symbol": "+",
-    "operand": 3.0
-  },
-  {
-    "id": 4,
-    "command": "add",
-    "symbol": "+",
-    "operand": 34.0
+    "operand": 2.0
   }
 ]

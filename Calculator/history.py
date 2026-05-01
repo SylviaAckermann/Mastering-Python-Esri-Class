@@ -48,14 +48,9 @@ class history:
                 del self.__calc_history[idx]
                 break  # Exit after removing the first match
         return self
-    
-    def save_history(self, json_file_name):
-        if is_filename(json_file_name):
-            with open(json_file_name, "w", encoding="utf-8") as history_file:
-                entries_as_dicts = [entry.to_dict() for entry in self]
-                json.dump(entries_as_dicts, history_file, indent=2)
 
-    def load_history(self, json_file_name):
+
+    def load_history_json(self, json_file_name):
         try:
             with open(json_file_name, "r", encoding="utf-8") as history_file:
                 loaded_data = json.load(history_file)
@@ -72,6 +67,14 @@ class history:
         except json.JSONDecodeError:
             print(f"Error reading history file {json_file_name}. Starting with empty history.")
     
+
+    def save_history_json(self, json_file_name):
+        if is_filename(json_file_name):
+            with open(json_file_name, "w", encoding="utf-8") as history_file:
+                entries_as_dicts = [entry.to_dict() for entry in self]
+                json.dump(entries_as_dicts, history_file, indent=2)
+
+
     def save_history_csv(self, csv_file_name):
         if is_filename(csv_file_name):
             with open(csv_file_name, "w", newline="") as f:
