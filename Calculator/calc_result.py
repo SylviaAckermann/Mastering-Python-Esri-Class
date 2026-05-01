@@ -38,8 +38,7 @@ def get_command_function(command):
         return div
     
 
-def command_calc(calc_fn, command_name, history):
-    operand = get_operand()
+def command_calc(calc_fn, command_name, operand, history):
     value = calculate_result(history)
     value, symbol, operand = calc_fn(value, operand)
     print_result(value)

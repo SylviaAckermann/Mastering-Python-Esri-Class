@@ -9,19 +9,20 @@ def command_loop():
     my_calc_history = get_history_json()
 
     while True: 
-        command = get_command()
+        command, number = get_command()
 
         if command == "clear":
             my_calc_history = command_clear()
             result = calculate_result(my_calc_history.get_calc_history())
             print_result(result)
+            
         elif command == "exit":
             command_exit()
             break
         elif command == "remove":
-            my_calc_history = history.remove_id_from_history(my_calc_history)
+            my_calc_history = history.remove_id_from_history(my_calc_history, number)
             history.print_history_commands(my_calc_history)
-            continue
+
         elif command == "history":
             history.print_history_commands(my_calc_history)
             history.print_history_calculations(my_calc_history)
@@ -31,12 +32,12 @@ def command_loop():
         else:
             
             if command == "add" or command == "+":
-                my_calc_history = command_calc(add, command, my_calc_history)
+                my_calc_history = command_calc(add, command, number, my_calc_history)
             elif command == "subtract" or command == "-":
-                my_calc_history = command_calc(sub, command, my_calc_history)
+                my_calc_history = command_calc(sub, command, number, my_calc_history)
             elif command == "multiply" or command == "*":
-                my_calc_history = command_calc(mul, command, my_calc_history)
+                my_calc_history = command_calc(mul, command, number, my_calc_history)
             elif command == "divide" or command == "/":
-                my_calc_history = command_calc(div, command, my_calc_history)
+                my_calc_history = command_calc(div, command, number, my_calc_history)
             else:
                 unknown_command(command)
